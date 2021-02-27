@@ -1,4 +1,4 @@
-# Product Validation
-
-# run the app : ng serve
-# run tests : ng test
+# Frontend
+**To run the app hit  : ng serve**
+<br/>
+**To run test cases hit : ng test**

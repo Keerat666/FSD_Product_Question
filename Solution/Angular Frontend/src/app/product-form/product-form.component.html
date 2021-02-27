@@ -1,0 +1,83 @@
+<div class="layout-column justify-contents-center align-items-center">
+  <section class="card pa-50 card-container">
+    <form [formGroup]="productForm" class="layout-column" novalidate>
+      <label class="mt-20">
+        <input
+          type="text"
+          data-test-id="name-input"
+          autocomplete="off"
+          formControlName="name"
+          class="white large outlined"
+          [class]="{'error': ( productForm.get('name').invalid) && (!productForm.get('name').pristine)  }"
+          placeholder="Product Name"
+        />
+      </label>
+      <label class="mt-20">
+        <input
+          type="text"
+          formControlName="id"
+          autocomplete="off"
+          data-test-id="id-input"
+          class="white large outlined"
+          [class]="{'error': ( productForm.get('id').invalid) && (!productForm.get('id').pristine)  }"
+          placeholder="Product ID"
+        />
+      </label>
+      <div class="layout-row card-info mt-20">
+        <section class="layout-column">
+          <div class="flex">
+            <label class="expiry-month">
+              <input
+                type="number"
+                formControlName="dp"
+                data-test-id="cp-input"
+                autocomplete="off"
+                class="white large outlined"
+          [class]="{'error': ( productForm.get('dp').invalid) && (!productForm.get('dp').pristine)  }"
+                placeholder=""
+              />
+              <p class="form-hint">Display Price</p>
+            
+            </label>
+            <label class="expiry-year ml-12">
+              <input
+                type="number"
+                formControlName="op"
+                data-test-id="sp-input"
+                autocomplete="off"
+                class="white large outlined"
+                [class]="{'error': ( productForm.get('op').invalid) && (!productForm.get('op').pristine)  }"
+                placeholder=""
+              />
+              <p class="form-hint">Offer Price</p>
+           
+            </label>
+          </div>
+        </section>
+
+     
+      </div>
+
+
+
+   <label class="cvv-number">
+          <input
+            type="text"
+            formControlName="discount"
+            autocomplete="off"
+            data-test-id="discount-input"
+            class="white large outlined"
+            [class]="{'error': ( productForm.get('discount').invalid) && (!productForm.get('discount').pristine)  }"
+            placeholder="0 or 1"
+          />
+          <p class="form-hint">Is Discounted?</p>
+       
+        </label>
+      <button class="mt-50" type="submit" data-test-id="submit-button" [disabled]="productForm.invalid" (click)="submit()">
+        Submit
+      </button>
+
+      <p data-test-id="result-output"> {{result}}</p>
+    </form>
+  </section>
+</div>

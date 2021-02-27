@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <mate charest="utf-8" />
+    <title>Hello world!</title>
+</head>
+
+<body>
+    <h1>Order Summary</h1>
+    <ul>
+        {{#each users}}
+        <li>Name: {{this.name}}</li>
+        <li>Price: {{this.price}}</li>
+        <li>Quantity: {{this.quantity}}</li>
+
+        <br> {{/each}}
+    </ul>
+</body>
+
+</html>
